@@ -1,17 +1,67 @@
 namespace FlappyBird
 {
-    public partial class Form1 : Form
+    public partial class FormDesign : System.Windows.Forms.Form
     {
         int pipeSpeed = 8;
         int gravity = 0;
         int score = 0;
 
-        public Form1()
+        public FormDesign()
         {
             InitializeComponent();
         }
 
-        private void gameTimerEvent(object sender, EventArgs e)
+        private void KeyIsUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                gravity = 6;
+            }
+        }
+
+        private void KeyIsDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                gravity = -6;
+            }
+        }
+
+        private void EndGame()
+        {
+            gameTimer.Stop();
+            scoreText.Text += " Game Over !!!";
+            pipeSpeed = 8;
+            gravity = 0;
+            score = 0;
+            buttonStart.Enabled = true;
+            buttonExit.Enabled = true;
+        }
+
+        private void Button_Start(object sender, EventArgs e)
+        {
+            gameTimer.Start();
+            flappyBird.Location = new Point(54, 171);
+            pipeTop.Location = new Point(380, -1);
+            pipeTop2.Location = new Point(716, -1);
+            pipeBottom.Location = new Point(279, 253);
+            pipeBottom.Location = new Point(553, 295);
+            buttonStart.Enabled = false; 
+            buttonExit.Enabled = false;
+        }
+
+        private void Button_Exit(object sender, EventArgs e)
+        {
+            var YesOrNo = new DialogResult();
+            YesOrNo = MessageBox.Show("Apakah Anda Ingin Keluar??",
+                    "Picture Puzzle-Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (YesOrNo == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+        }
+
+        private void GameTimerEvent(object sender, EventArgs e)
         {
             // untuk mengatur naik turun posisi image dengan menambahkannya dari gravity
             // nilai 0 berarti posisi image default
@@ -51,7 +101,7 @@ namespace FlappyBird
                 flappyBird.Bounds.IntersectsWith(pipeTop2.Bounds) ||
                 flappyBird.Bounds.IntersectsWith(ground.Bounds) || flappyBird.Top < -25)
             {
-                
+
                 EndGame();
             }
 
@@ -59,43 +109,6 @@ namespace FlappyBird
             {
                 pipeSpeed = 15;
             }
-        }
-
-        private void KeyIsUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Up)
-            {
-                gravity = 6;
-            }
-        }
-
-        private void KeyIsDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Up)
-            {
-                gravity = -6;
-            }
-        }
-
-        private void EndGame()
-        {
-            gameTimer.Stop();
-            scoreText.Text += " Game Over !!!";
-            pipeSpeed = 8;
-            gravity = 0;
-            score = 0;
-            button_start.Enabled = true;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            gameTimer.Start();
-            flappyBird.Location = new Point(82, 172);
-            pipeTop.Location = new Point(380, -1);
-            pipeTop2.Location = new Point(716,-1);
-            pipeBottom.Location = new Point(279,253);
-            pipeBottom.Location = new Point(553,295);
-            button_start.Enabled = false;
         }
     }
 }
