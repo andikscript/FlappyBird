@@ -1,10 +1,14 @@
 # FlappyBird
-
+Aplikasi Desktop untuk melatih ketelitian, kecepatan dan ketangkasan
 
 ## Running Program
 
-
 ## Preview
+Part | Image |
+--- | --- |
+| Start | <img src="https://user-images.githubusercontent.com/58913447/172767225-9137335e-111c-439b-a264-f273ddaff618.jpg" width="570" height="520" /> |
+| Game Over | <img src="https://user-images.githubusercontent.com/58913447/172767231-ba7da191-db55-4fdd-8486-6facc50223e6.jpg" width="570" height="520" /> |
+| Exit | <img src="https://user-images.githubusercontent.com/58913447/172767234-21869dc3-499f-4984-a9b6-361eb28d2b2f.jpg" width="570" height="520" /> |
 
 
 ## LICENSE
