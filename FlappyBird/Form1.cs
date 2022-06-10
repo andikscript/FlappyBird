@@ -54,7 +54,7 @@ namespace FlappyBird
         {
             var YesOrNo = new DialogResult();
             YesOrNo = MessageBox.Show("Apakah Anda Ingin Keluar??",
-                    "Picture Puzzle-Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    "Flappy Bird Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (YesOrNo == DialogResult.Yes)
             {
                 Environment.Exit(0);
