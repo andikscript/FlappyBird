@@ -1,5 +1,5 @@
 # FlappyBird
-Aplikasi Desktop untuk melatih ketelitian, kecepatan dan ketangkasan
+Aplikasi Game Desktop untuk melatih ketelitian, kecepatan dan ketangkasan
 
 ## Running Program
 <img src="https://user-images.githubusercontent.com/58913447/172768384-1baa2a6e-2239-4188-9a70-337837ba819b.gif" width="570" height="520" /> 
